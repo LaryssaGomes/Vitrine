@@ -1,0 +1,33 @@
+{% extends 'admin/adminBase.html' %} 
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <div class="login-form">
+                <h2>Produto</h2>
+                <form method="post" autocomplete="off"  enctype= multipart/form-data>
+                    {% csrf_token %}
+                    
+                    {{form}}
+
+                    <button type="submit" class="btn btn-default">Salvar</button>
+                </form>
+            </div><!--/login form-->
+        </div>
+    </div>  
+</div>    
+    {% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <h1>Usuário não autenticado</h1>
+         </div><!--/login form-->
+    </div>
+</div>  
+    {% endif %}
+   
+
+{% endblock %}

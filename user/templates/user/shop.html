@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+		<div class="container">
+			<div class="row">
+				<form method="post" class="form-search">
+					{% csrf_token %}
+					
+						<input type="search" id="search" name="search" placeholder="Search..."/>
+						<button type="submit" class="btn btn-primary ">Pesquisa</button>
+					
+				</form>
+				 {% if produtos.exists %}
+                        {% for produto in produtos %}
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="{{ produto.pro_img.url }}" alt="" />
+										<h2>R${{ produto.pro_price }}</h2>
+										<p>{{ produto.pro_name }}</p>
+										<a href="#" class="btn btn-default add-to-cart">Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>R${{ produto.pro_price }}</h2>
+											<p>{{ produto.pro_description }}</p>
+											<a href="#" class="btn btn-default add-to-cart">Add to cart</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					{% endif %}
+					
+					</div><!--features_items-->
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

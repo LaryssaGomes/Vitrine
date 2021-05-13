@@ -1,0 +1,24 @@
+[
+{
+    "model": "user.producto",
+    "pk": 1,
+    "fields": {
+        "pro_inst": "Vestido",
+        "pro_name": "nome de produto",
+        "pro_description": "descrição de produto",
+        "pro_price": "10",
+        "pro_img": "Producto/154l_600x799.jpg"
+    }
+},
+{
+    "model": "user.producto",
+    "pk": 2,
+    "fields": {
+        "pro_inst": "Calca",
+        "pro_name": "nome de produto",
+        "pro_description": "descrição de produto",
+        "pro_price": "60",
+        "pro_img": "Producto/kit_3_calca.jpg"
+    }
+}
+]

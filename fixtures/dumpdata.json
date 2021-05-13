@@ -1,0 +1,66 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2021-05-12T02:34:36.962Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Producto object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "user.usuario",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$YXpIuDMaJJWJ$NC8mZfKEd53cmESdsj4gITdYQI//CPd61+UXziuSRQw=",
+            "last_login": "2021-05-13T19:11:13.919Z",
+            "is_superuser": true,
+            "username": "laryssag533@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "email": "laryssag533@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-05-11T12:46:48.961Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "user.producto",
+        "pk": 12,
+        "fields": {
+            "pro_inst": "Camisa",
+            "pro_name": "Camisa b�sica",
+            "pro_description": "Camisa b�sica branca manga curta masculina.",
+            "pro_price": "15.00",
+            "pro_img": "Producto/camiseta-branca-masculina.jpg"
+        }
+    },
+    {
+        "model": "user.producto",
+        "pk": 13,
+        "fields": {
+            "pro_inst": "Vestido",
+            "pro_name": "vestido preto b�sico",
+            "pro_description": "vestido preto b�sico para todas as ocasi�es",
+            "pro_price": "40.00",
+            "pro_img": "Producto/154l_600x799.jpg"
+        }
+    },
+    {
+        "model": "user.producto",
+        "pk": 14,
+        "fields": {
+            "pro_inst": "Calca",
+            "pro_name": "Cal�a feminina",
+            "pro_description": "Cal�a feminina jogger bengaline ,com estampa xadrez em diversas cores",
+            "pro_price": "60.00",
+            "pro_img": "Producto/kit_3_calca.jpg"
+        }
+    }
+]

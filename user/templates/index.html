@@ -1,0 +1,72 @@
+
+{% extends 'admin/adminBase.html' %}
+
+{% block content %}
+ {% if user.is_authenticated %}
+    <div class="container">
+        <h1>Vitrine</h1>
+        <div class="alert alert-primary" role="alert">
+            Seja bem-vindo(a)  a área adiminstrativa!
+        </div>
+        <div id="product">
+            <a href="{% url 'add' %}"><button type="button" class="btn btn-primary">Adicionar novo Produto</button></a>
+             <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if produtos.exists %}
+                        {% for produto in produtos %}
+                        <tr>
+                            <th >{{ produto.id }}</th>
+                            <th >{{ produto.pro_name }}</th>
+                            <th >R${{ produto.pro_price}}</th>
+                            <th >{{ produto.pro_description }}</th>
+                            <th ><img src="{{ produto.pro_img.url}}" height="80" width="80"/></th>
+                            <th >
+                                <a class="btn btn-warning" href="{% url 'update' produto.id %}">Editar</a>
+                                <a class="btn btn-danger" href="{% url 'delete' produto.id %}">Deletar</a>
+                            </th>
+                        </tr>
+                        {% endfor %}
+                        {% if is_paginated %}
+                        <div class="pagination">
+                            <span class="page-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="/login?page={{ page_obj.previous_page_number }}" class="btn btn-primary">Anterior</a>
+                                {% endif %}
+                                <span class="page-current">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                    <a href="/login?page={{ page_obj.next_page_number }}" class="btn btn-primary">Proxima</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    {% endif %}
+                    {% else %}
+                        <tr>
+                            <th>Sem cadastro de produtos</th>
+                        </tr>
+                    {% endif %}
+        
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <h1>Usuário não autenticado</h1>
+         </div><!--/login form-->
+    </div>
+</div>  
+    {% endif %}
+{% endblock %}
